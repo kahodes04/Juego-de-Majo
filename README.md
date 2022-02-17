@@ -1,5 +1,5 @@
 # Juego de Majo
-Welcome to my implementation of the "Juego de Majo" game.
+Welcome to my implementation of the "Juego de Majo" game. Self translated to Spanish, English and German.
 
 ## What it is
 
