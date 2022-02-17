@@ -1,0 +1,36 @@
+﻿<Controls:MetroWindow x:Class="JuegodeMajoWPF.TeamNameWindow"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JuegodeMajoWPF"
+        mc:Ignorable="d"
+        BorderThickness="0" 
+        GlowBrush="Black"
+        ResizeMode="CanResizeWithGrip"
+        WindowTransitionsEnabled="False"
+        WindowStartupLocation="CenterScreen"
+        Title="TeamNameWindow" Height="165" Width="350" SizeToContent="Height">
+
+    <Grid>
+        <Controls:MetroAnimatedSingleRowTabControl x:Name="tabcontrol" TabStripPlacement="Top" SelectionChanged="Tabcontrol_SelectionChanged">
+            <TabItem Header="">
+                <StackPanel>
+                    <TextBlock Text="{StaticResource Nameofteam}" Style="{StaticResource MaterialDesignHeadline3TextBlock}" FontWeight="Medium" FontSize="15"/>
+                    <TextBox x:Name="textboxnameinput" Padding="2" Margin="0 2 0 4" KeyDown="textboxnameinput_onkeydown"/>
+                    <Grid>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Button x:Name="buttonapplyname" Grid.Column="0" Margin="0 4 0 0" Content="{StaticResource Apply}" Click="Buttonapplyname_Click"/>
+                    </Grid>
+                </StackPanel>
+            </TabItem>
+        </Controls:MetroAnimatedSingleRowTabControl>
+    </Grid>
+</Controls:MetroWindow>

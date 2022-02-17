@@ -1,0 +1,31 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <!-- String resource that can be localized -->
+    <system:String x:Key="Play">Spielen</system:String>
+    <system:String x:Key="Numberofteams">Anzahl der Mannschaften</system:String>
+    <system:String x:Key="Editnames">Namen ändern</system:String>
+    <system:String x:Key="Timeseconds">Zeit (Sekunden)</system:String>
+    <system:String x:Key="Words">Wörter</system:String>
+    <system:String x:Key="Usediccionary">Wörterbuch benutzen</system:String>
+    <system:String x:Key="Numberofrandomwords">Anzahl der zufälligen Wörter</system:String>
+    <system:String x:Key="Entermanually">Selbst eintragen</system:String>
+    <system:String x:Key="Add">Einfügen</system:String>
+    <system:String x:Key="Delete">Löschen</system:String>
+    <system:String x:Key="Continue">Weiter</system:String>
+    <system:String x:Key="Apply">Anwenden</system:String>
+    <system:String x:Key="Nameofteam">Mannschaftsname</system:String>
+    <system:String x:Key="Team">Mannschaft</system:String>
+    <system:String x:Key="Game">Spiel</system:String>
+    <system:String x:Key="Correct">Richtig</system:String>
+    <system:String x:Key="Incorrect">Falsch</system:String>
+    <system:String x:Key="Open">Öffnen</system:String>
+    <system:String x:Key="OpenTextFile">Eine Textdatei öffnen</system:String>
+    <system:String x:Key="TimeIntroduce">Gib die Zeit in Sekunden ein</system:String>
+    <system:String x:Key="RandWordIntroduce">Gib die Zahl der aus der Liste ausgewählt zufälligen Wörter ein</system:String>
+    <system:String x:Key="StartGame">Das Spiel starten</system:String>
+    <system:String x:Key="ContinueGame">Das Spiel fortsetzen</system:String>
+    <system:String x:Key="Points">Punkte</system:String>
+    
+</ResourceDictionary>

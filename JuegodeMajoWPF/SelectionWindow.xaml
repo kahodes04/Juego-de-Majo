@@ -1,0 +1,104 @@
+﻿<Controls:MetroWindow x:Class="JuegodeMajoWPF.SelectionWindow"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JuegodeMajoWPF"
+        Icon="assets\jm.ico"
+        mc:Ignorable="d"
+        BorderThickness="0" 
+        GlowBrush="Black"
+        ResizeMode="CanResizeWithGrip"
+        WindowTransitionsEnabled="False"
+        WindowStartupLocation="CenterScreen"
+        Title="JUEGO DE MAJO" Height="530" Width="365" SizeToContent="Height">
+    <Border BorderBrush="Black" Padding="0">
+        <StackPanel>
+            <Grid>
+                <StackPanel>
+                    <TextBlock Text="{StaticResource Numberofteams}" Style="{StaticResource MaterialDesignHeadline3TextBlock}" FontWeight="Medium" FontSize="15" FontFamily="/JuegodeMajoWPF;component/assets/Roboto/#Roboto" Margin="0 4 0 0"/>
+                    <ComboBox x:Name="comboboxnumofteams" SelectedIndex="0" Padding="2" Margin="0 0 0 1" SelectionChanged="comboboxnumofteams_selchanged">
+                        <ComboBoxItem>2</ComboBoxItem>
+                        <ComboBoxItem>3</ComboBoxItem>
+                        <ComboBoxItem>4</ComboBoxItem>
+                        <ComboBoxItem>5</ComboBoxItem>
+                        <ComboBoxItem>6</ComboBoxItem>
+                        <ComboBoxItem>7</ComboBoxItem>
+                        <ComboBoxItem>8</ComboBoxItem>
+                        <ComboBoxItem>9</ComboBoxItem>
+                    </ComboBox>
+                    <Grid Margin="0 2 0 2">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1.5*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Button x:Name="buttoneditteamnames" FontFamily="/JuegodeMajoWPF;component/assets/Roboto/#Roboto" Grid.Column="0" Margin="0 1 0 2" Content="{StaticResource Editnames}" ToolTip="MaterialDesignOutlinedButton"  Click="buttoneditteamnames_click"/>
+
+                    </Grid>
+                </StackPanel>
+            </Grid>
+            <Grid>
+                <StackPanel>
+                    <TextBlock Text="{StaticResource Timeseconds}" Style="{StaticResource MaterialDesignHeadline3TextBlock}" FontWeight="Medium" FontSize="15" FontFamily="/JuegodeMajoWPF;component/assets/Roboto/#Roboto" Margin="0 4 0 2"/>
+                    <TextBox Controls:TextBoxHelper.Watermark="{StaticResource TimeIntroduce}" x:Name="textboxtime" Margin="0 2 0 6" Padding="2" PreviewTextInput="textboxtime_check" PreviewKeyDown="textbosnumofrandword_previewkeydown" TextChanged="textboxnumofrandword_textchanged"/>
+                </StackPanel>
+            </Grid>
+            <Grid>
+                <StackPanel>
+                    <TextBlock Text="{StaticResource Words}" Style="{StaticResource MaterialDesignHeadline3TextBlock}" FontWeight="Medium" FontFamily="/JuegodeMajoWPF;component/assets/Roboto/#Roboto" FontSize="15" Margin="0 6 0 2"/>
+                    <RadioButton x:Name="radiouserdic" Foreground="Black" GroupName="selection" Checked="radiouserdic_checked" Unchecked="radiouserdic_unchecked" Content="{StaticResource Usediccionary}" Margin="0 2 0 4"/>
+                    <Grid>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1.5*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Button x:Name="buttonloadfile" FontFamily="/JuegodeMajoWPF;component/assets/Roboto/#Roboto" Grid.Column="0" Margin="0 1 0 2" Content="{StaticResource Open}" ToolTip="MaterialDesignOutlinedButton"  Click="Buttonloadfile_Click"/>
+
+                    </Grid>
+                    <TextBlock x:Name="textblocknumofrandword" FontFamily="/JuegodeMajoWPF;component/assets/Roboto/#Robot" Text="{StaticResource Numberofrandomwords}" FontWeight="Medium" FontSize="15" Margin="0 4 0 0"/>
+                    <TextBox Controls:TextBoxHelper.Watermark="{StaticResource RandWordIntroduce}" x:Name="textboxnumofrandword" Margin="0 0 0 6" Padding="2" PreviewTextInput="textboxnumofrandword_check" PreviewKeyDown="textbosnumofrandword_previewkeydown" TextChanged="textboxnumofrandword_textchanged">
+                        <TextBox.Text>
+                            <Binding Path="Name">
+                                <Binding.ValidationRules>
+                                    <ExceptionValidationRule />
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
+                    <RadioButton x:Name="radiomanualentry" Margin="0 6 0 4" GroupName="selection" Content="{StaticResource Entermanually}" Foreground="Black"/>
+                    <Border Padding="0">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <TextBox x:Name="textboxwordinput" Padding="2" Grid.Column="0" KeyDown="textboxwordinput_onkeydown"/>
+                            <Button x:Name="buttonaddword" FontFamily="/JuegodeMajoWPF;component/assets/Roboto/#Roboto" Margin="0 0 0 0" Content="{StaticResource Add}" Grid.Column="1" Click="buttonaddword_click"/>
+                            <Button x:Name="buttondeleteword" FontFamily="/JuegodeMajoWPF;component/assets/Roboto/#Roboto" Margin="0 0 0 0" Content="{StaticResource Delete}" Grid.Column="2" Click="buttondeleteword_click"/>
+                        </Grid>
+                    </Border>
+
+                    <ListBox x:Name="listboxwords" Height="100" Margin="0,0,0,2"/>
+                </StackPanel>
+            </Grid>
+            <StackPanel Grid.Row="1" VerticalAlignment="Center">
+
+                <Button Style="{StaticResource MaterialDesignRaisedButton}" materialDesign:ButtonProgressAssist.Value="-1" materialDesign:ButtonProgressAssist.IsIndicatorVisible="True" materialDesign:ButtonProgressAssist.IsIndeterminate="False" FontFamily="/JuegodeMajoWPF;component/assets/Roboto/#Roboto" IsEnabled="False"  x:Name="buttonsecondplay" Margin="4 10 4 2" Content="{StaticResource Continue}" Click="buttonsecondplay_click"/>
+            </StackPanel>
+        </StackPanel>
+
+
+
+
+    </Border>
+</Controls:MetroWindow>
